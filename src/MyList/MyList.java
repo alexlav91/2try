@@ -4,7 +4,8 @@ import jdk.internal.util.ArraysSupport;
 
 import java.util.*;
 
-public class MyList <E> extends ArrayList implements List {
+public class MyList <E> extends AbstractList
+        implements List, Cloneable {
     private static final long serialVersionUID = 8683452581122892189L;
     private static final int DEFAULT_CAPACITY = 10;
     private static final Object[] EMPTY_ELEMENTDATA = {};
@@ -190,6 +191,9 @@ public class MyList <E> extends ArrayList implements List {
     @Override
     public Object[] toArray(Object[] a) {
         return new Object[0];
+    }
+    public void sort(){
+
     }
 
 

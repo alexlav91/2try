@@ -1,6 +1,6 @@
 package MyList;
 
-public class SomeThing {
+public class SomeThing implements Comparable {
     private String type;
     private int age;
     private double size;
@@ -33,5 +33,10 @@ public class SomeThing {
 
     public void setSize(double size) {
         this.size = size;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
