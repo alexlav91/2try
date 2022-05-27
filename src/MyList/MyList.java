@@ -4,8 +4,7 @@ import jdk.internal.util.ArraysSupport;
 
 import java.util.*;
 
-public class MyList <E> extends AbstractList
-        implements List, Cloneable {
+public class MyList <E> extends AbstractList implements List, Cloneable {
     private static final long serialVersionUID = 8683452581122892189L;
     private static final int DEFAULT_CAPACITY = 10;
     private static final Object[] EMPTY_ELEMENTDATA = {};
@@ -93,6 +92,16 @@ public class MyList <E> extends AbstractList
 
     @Override
     public Iterator <E>  iterator() {
+        boolean hasNext(){
+        }
+        E next(){
+
+        }
+        void remove(){
+
+        }
+
+
 
 
         return null;
