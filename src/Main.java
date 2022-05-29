@@ -4,11 +4,23 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        MyList<SomeThing> Things = new MyList<SomeThing>();
+    //Compare to
 
-        SomeThing cat = new SomeThing("cat",2,2.0);
-        SomeThing bottle = new SomeThing("bottle", 1, 1.5);
-        SomeThing cloud = new SomeThing("cloud", 2, 2000.0);
+        User user1 = new User("Tition",20, 100);
+        User user2 = new User("Jeime",25, 195);
+        user1.compareTo(user2);
+
+
+        //My list impl
+        MyList myList = new MyList();
+        myList.add("Vasya");
+        myList.add("Petya");
+
+
+        for (Object o:
+                myList) {
+            System.out.println(o);
+        }
 
 
 
