@@ -56,5 +56,10 @@ public class User implements Comparable <User> {
         }
 
     }
+    @Override
+    public java.lang.String toString() {
+        return "Name: "+ name+ ", Age: "+ age+ ", Height: "+ height;
+    }
+
 
 }
