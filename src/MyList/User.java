@@ -45,13 +45,13 @@ public class User implements Comparable <User> {
     @Override
     public int compareTo(User u) {
         if(u.height > this.height){
-            System.out.println(u.name + "Выше чем " + this.name);
+            System.out.println(u.name + " heigher " + this.name);
             return 1;
         }else if(u.height < this.height){
-            System.out.println(u.name + "Ниже чем " + this.name);
+            System.out.println(u.name + " shorter " + this.name);
             return -1;
         }else{
-            System.out.println(u.name + " Эквивалентен " + this.name);
+            System.out.println(u.name + " equivalent " + this.name);
             return 0;
         }
 

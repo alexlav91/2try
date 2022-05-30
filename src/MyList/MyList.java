@@ -7,13 +7,21 @@ import java.util.ListIterator;
 
 public class MyList implements List {
 
-    static Object[] listBody = new Object[0];
+    static User[] listBody = new User[0];
 
     static int size = listBody.length;
 
     public void sort() {
-        for (int i =1; i<size; i++){
-            for(int j =0; j<size; j++){
+        for (int i =0; i<size; i++){
+            for(int j =1; j<size; j++){
+                if(listBody[j-1].compareTo(listBody[j])==-1){
+                    User X = new User();
+                    X = listBody[j-1];
+                    listBody[j-1]= listBody[j];
+                    listBody[j]=X;
+
+
+                }
 
             }
         }
@@ -66,9 +74,14 @@ public class MyList implements List {
 
     @Override
     public boolean add(Object o) {
+        return false;
+    }
+
+
+    public boolean add(User o) {
         int newListSize = size+1;
 
-        Object[] newListBody = new Object[newListSize];
+        User[] newListBody = new User[newListSize];
 
         for (int i = 0; i < size; i++) {
             newListBody[i] = listBody[i];
