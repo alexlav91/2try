@@ -5,24 +5,21 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class MyList implements List {
+public class MyList<T extends User> implements List {
 
     static User[] listBody = new User[0];
 
     static int size = listBody.length;
 
     public void sort() {
-        for (int i =0; i<size; i++){
-            for(int j =1; j<size; j++){
-                if(listBody[j-1].compareTo(listBody[j])==-1){
-                    User X = new User();
-                    X = listBody[j-1];
-                    listBody[j-1]= listBody[j];
-                    listBody[j]=X;
-
-
+        for (int i = 0; i < size; i++) {
+            for (int j = 1; j < size; j++) {
+                if (listBody[j - 1].compareTo(listBody[j]) < 0) {
+                    User X;
+                    X = listBody[j - 1];
+                    listBody[j - 1] = listBody[j];
+                    listBody[j] = X;
                 }
-
             }
         }
     }
@@ -48,7 +45,7 @@ public class MyList implements List {
 
         Iterator myIterator = new Iterator() {
             int index = 0;
-            int lastReturnedIndex = -1;
+
             @Override
             public boolean hasNext() {
                 return size > index;
@@ -56,7 +53,7 @@ public class MyList implements List {
 
             @Override
             public Object next() {
-                if(hasNext()){
+                if (hasNext()) {
                     Object currElement = listBody[index];
                     index++;
                     return currElement;
@@ -78,17 +75,11 @@ public class MyList implements List {
     }
 
 
-    public boolean add(User o) {
-        int newListSize = size+1;
-
+    public boolean add(T o) {
+        int newListSize = size + 1;
         User[] newListBody = new User[newListSize];
-
-        for (int i = 0; i < size; i++) {
-            newListBody[i] = listBody[i];
-        }
-
-        newListBody[newListSize-1] = o;
-
+        if (size >= 0) System.arraycopy(listBody, 0, newListBody, 0, size);
+        newListBody[newListSize - 1] = o;
         listBody = newListBody;
         size = newListBody.length;
         return true;
